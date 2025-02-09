@@ -1,75 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="http://vthang0412.com" method="post">
         <div>
-            <label for="username">Ho va ten:</label>
-            <input type="text" name="username" id="username">
+            <label for="Name">Họ và tên:</label>
+            <input type="text" name="Name" id="Name">
+        </div>
+        <div>
+            <label for="dob">Ngày sinh:</label>
+            <input type="date" name="date" id="date">
+        </div>
+        <div>
+            <label for="">Giới tính:</label>
+            <input type="radio" name="gender" value="Nam">
+            <label for="Nam">Nam</label>
+            <input type="radio" name="gender" value="Nu">
+            <label for="Nu">Nữ </label>
+        </div>
+        <div>
+            <label for="CCCD">Số căn cước công dân:</label>
+            <input type="tel" name="CCCD" id="CCCD" pattern="\d{9,12}" title="Vui lòng nhập 9 hoặc 12 số">
+        </div>
+        <div>
+            <label for="issuaDate">Ngày cấp:</label>
+            <input type="date" name="issueDate" id="issueDate">
+        </div>
+        <div>
+            <label for="issuePlace">Nơi cấp:</label>
+            <input type="text" name="issuePlace" id="issuePlace">
+        </div>
+        <div>
+            <label for="telephone">Số điện thoại:</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="123-12-123"
+                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
         </div>
         <div>
             <label for="email">Email:</label>
             <input type="email" name="email" id="email">
         </div>
         <div>
-            <label for="dob">Ngay sinh</label>
-            <input type="date" name="dob" id="dob">
+            <label for="permanentAddress">Địa chỉ thường trú:</label>
+            <textarea name="permanentAddress" id="permanentAddress" rows="2"></textarea>
         </div>
         <div>
-            <label>Gioi tinh:</label>
-            <label for="Nam">Nam</label>
-            <input type="radio" name="gender" id="Nam">
-            <label for="Nu">Nu</label>
-            <input type="radio" name="gender" id="Nu">
+            <label for="temporaryAddress">Địa chỉ tạm trú:</label>
+            <textarea name="temporaryAddress" id="temporaryAddress" rows="2"></textarea>
         </div>
         <div>
-            <label for="telephone">So dien thoai:</label>
-            <input type="tel" name="telephone" id="telephone">
+            <label>Loại căn cước công dân:</label>
+            <input type="radio" name="idType" value="Mới">
+            <label for="Mới">Căn cước công dân mới</label>
+            <input type="radio" name="idType" value="Cũ">
+            <label for="Cũ ">Căn cước công dân cũ </label>
         </div>
         <div>
-            <label for="Cn">Chuyen nganh:</label>
-            <input type="text" name="Cn" id="Cn">
+            <label for="ethnicity">Dân tộc:</label>
+            <input type="text" name="ethnicity" id="ethnicity">
         </div>
         <div>
-            <label for="Namhoc">Nam nhap hoc:</label>
-            <input type="number" min="2000" max="2026" step="1">
+            <label for="religion">Tôn giáo:</label>
+            <input type="text" name="religion" id="religion">
         </div>
         <div>
-            <label for="GPA">Diem GPA:</label>
-            <input type="number" min="1" max="10" step="1">
+            <label for="nationality">Quốc tịch:</label>
+            <input type="text" name="nationality" id="nationality" value="Việt Nam">
         </div>
         <div>
-            <label for="dc">Dia chi:</label>
-            <textarea name="dc" id="dc" rows="2"></textarea>
+            <label for="parentName">Họ tên cha/mẹ:</label>
+            <input type="text" name="parentName" id="parentName">
         </div>
         <div>
-            <label>Lop hoc:</label>
-            <select name="Lop hoc" id="">
-                <option value="Lop 1">Lop 1</option>
-                <option value="Lop 2">Lop 2</option>
-                <option value="Lop 3">Lop 3</option>
-                <option value="Lop 4">Lop 4</option>
-                <option value="Lop 5">Lop 5</option>
-                <option value="Lop 6">Lop 6</option>
-                <option value="Lop 7">Lop 7</option>
-                <option value="Lop 8">Lop 8</option>
-                <option value="Lop 9">Lop 9</option>
-                <option value="Lop 10">Lop 10</option>
-                <option value="Lop 11">Lop 11</option>
-                <option value="Lop 12">Lop 12</option>
+            <label for="parentId">Số CMND/CCCD của cha/mẹ:</label>
+            <input type="text" name="parentId" id="parentId" pattern="\d{9,12}" title="Vui lòng nhập 9 hoặc 12 số">
+        </div>
+        <div>
+            <label for="province">Tỉnh/Thành phố:</label>
+            <select name="province" id="province">
+                <option value="" disabled selected>Chọn Tỉnh/Thành phố</option>
+                <option value="Hà Nội">Hà Nội</option>
+                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
             </select>
         </div>
         <div>
-            <label for="Ngay dang ky hoc">Ngay dang ky hoc</label>
-            <input type="datetime-local" name="date" id="date">
-        </div>
-        <div>
-            <button type="submit">Gui thong tin</button>
+            <button type="submit">Gửi thông tin</button>
         </div>
     </form>
 </body>
+
 </html>
