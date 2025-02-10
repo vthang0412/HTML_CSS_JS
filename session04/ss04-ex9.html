@@ -103,19 +103,18 @@
         </table>
         <h3>Cat Form</h3>
         <form>
-            <label>Is your cat an indoor or outdoor cat?</label>
-            <br>
-            <input type="radio" name="catType" value="Indoor" checked> Indoor
-            <input type="radio" name="catType" value="Outdoor"> Outdoor
-            <hr>
-            <label>What's your cat's personality?</label>
-            <br>
-            <input type="checkbox" name="personality" value="Loving" checked> Loving
-            <input type="checkbox" name="personality" value="Lazy"> Lazy
-            <input type="checkbox" name="personality" value="Energetic"> Energetic
-            <hr>
+            <fieldset>
+                <legend>Is your cat an indoor or outdoor cat?</legend>
+                <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+                <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+              </fieldset>
+              <fieldset>
+                <legend>What's your cat's personality?</legend>
+                <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
+                <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+                <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+              </fieldset>
             <input type="text" name="catPhoto" placeholder="Cat photo URL">
-    
             <button type="submit">Submit</button>
         </form>
     </body>
