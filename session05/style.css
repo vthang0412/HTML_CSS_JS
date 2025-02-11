@@ -1,0 +1,85 @@
+h2 {
+    color: springgreen;
+    font-weight: lighter
+}
+
+button {
+    background-color: rgb(68, 181, 144);
+    color: blue;
+}
+
+h1+p {
+    color: red;
+    text-align: center;
+    /* text-align: left; */
+    /* text-align: right; */
+    line-height: 2;
+    /* text-decoration: underline; */
+    text-decoration: overline wavy red;
+    /* text-decoration: line-through wavy red; */
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-family: 'Times New Roman';
+}
+
+article {
+    background-color: yellow;
+}
+
+a {
+    text-decoration: none;
+}
+
+#btn {
+    background-color: yellow;
+}
+
+.anchor-tag {
+    text-decoration: underline blue dotted;
+}
+
+/* li .b{
+    text-decoration: overline blue wavy;
+} */
+/* li > b{
+    color: red;
+ } */
+li b {
+    text-decoration: overline;
+}
+
+input[type="text"] {
+    background-color: coral;
+}
+
+.anchor:link {
+    color: aquamarine;
+}
+
+.anchor:visited {
+    color: blue;
+}
+
+.anchor:hover {
+    color: coral;
+}
+
+.anchor:active {
+    color: cyan;
+}
+
+.pseudo-element::first-line {
+    color: blueviolet;
+}
+
+figure {
+    background-color: blue;
+}
+
+#figure-id {
+    background-color: red;
+}
+
+.figure-class {
+    background-color: rebeccapurple;
+}
