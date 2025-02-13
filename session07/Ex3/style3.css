@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+.title{
+    display: flex;
+}
+h1{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.title1{
+    padding-top: 10px;
+    padding-left: 10px;
+}
