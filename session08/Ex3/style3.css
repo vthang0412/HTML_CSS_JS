@@ -1,0 +1,54 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #2d2d2d;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    margin: 20px;
+    width: 400px;
+  }
+  .container h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .container h2:nth-child(1) {
+    width: 35%;
+    border-bottom: 2px solid #f56a6a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .card {
+    width: 250px;
+  }
+  .card img {
+    width: 250px;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+  .card p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .card button {
+    border-radius: 5px;
+    background-color: #ffff;
+    border: 3px solid #f78383;
+    color: #f78383;
+    width: 100px;
+    height: 40px;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 0px 20px 0 20px;
+    border-right: 2px solid #e6e9ea;
+  }
+  td:nth-child(1) {
+    padding-left: 0;
+  }

@@ -1,0 +1,55 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  table {
+    margin: auto;
+  }
+  .title1 {
+    background-color: white;
+  }
+  
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.6;
+    font-size: 25px;
+    font-weight: lighter;
+  }
+  .comment {
+    opacity: 0.5;
+    font-weight: lighter;
+  }
+  hr {
+    width: 60px;
+    opacity: 0.5;
+  }
+  .button01 {
+    width: 150px;
+    height: 40px;
+    margin-right: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    opacity: 0.5;
+  }
+  .button02 {
+    width: 150px;
+    height: 40px;
+    margin-right: 20px;
+    border-color: gray;
+    border-radius: 6px;
+  }
+  .title2 {
+    background-color: rgb(242, 242, 242);
+
+  }
+  .p-02 {
+    font-size: 25px;
+    opacity: 0.3;
+  }
+  .p-03 {
+    opacity: 0.3;
+    font-size: 15px;
+  }
