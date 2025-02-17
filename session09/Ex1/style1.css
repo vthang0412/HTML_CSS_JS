@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    background-color:#f0f0f0;
+    border: 2px solid black;
+    height: 400px;
+    margin-left: 625px;
+    margin-right: 625px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+div{
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    font-size: 20px;
+    color: white;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
