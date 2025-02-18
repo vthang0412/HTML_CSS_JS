@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 16px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  .service-container .container:nth-of-type(1) .col {
+    background-color: crimson;
+  }
+  
+  .service-container .container:nth-of-type(1) .col .post-container {
+    height: 400px;
+  }
+  
+  .service-container .row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .service-container .row .col {
+    background-color: crimson;
+    width: 33.33%;
+  }
+  
+  .service-container .container {
+    margin-bottom: 20px;
+  }
+  
+  .post-container {
+    background-image: url("https://yt3.googleusercontent.com/RyoE2hj7T9sawLWG47KaefhjslrUIlh_92UoNcqrC6dFbEbRSlsIpFGhwEpAdakq4i4z8zH_=s900-c-k-c0x00ffffff-no-rj");
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .post-container .title {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+  }

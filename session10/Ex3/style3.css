@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    width: 400px;
+    background-color: #f9fafc;
+    margin: auto;
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.img {
+    position: relative;
+}
+
+.img button {
+    position: absolute;
+    top: 14px;
+    right: 19px;
+    background: none;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid white;
+    padding: 5px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.birthday {
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
+section p:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+section p:nth-of-type(2) {
+    font-weight: 500;
+    opacity: 0.5;
+    padding-bottom: 10px;
+}
