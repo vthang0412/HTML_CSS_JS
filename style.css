@@ -1,20 +1,55 @@
-*{
-    margin: 0;
+/**{
+     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container{
-    background-color: rgb(255, 192, 192);
-    height: 700px;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content:space-between;
+h1{
+    background-color: red;
 }
-.container .child{
-    background-color: rgb(240, 132, 132);
-    border: 2px solid black;
-    font-size: 20px;
-    color: white;
-    width: 100px;
-    height: 100px;
+
+@media screen and (max-width: 768px){
+    h1{
+        background-color: green;
+    }
+} */
+
+/* Desktop- May tinh de ban */
+/* h3{
+    background-color: yellow;
+}
+@media screen and (max-width:1200px){
+    h3{
+        background-color: blue;
+    }
+} */
+
+/* Table -May tinh bang ngang */
+/* @media screen and (max-width:1024px){
+    h3{
+        background-color: purple;
+    }
+} */
+/* Table -May tinh bang doc */
+/* @media screen and (max-width:768px){
+    h3{
+        background-color: orangered;
+    }
+} */
+
+/* Phone - Dien thoai */
+/* @media screen and (max-width:480px) {
+    h3{
+        background-color: sienna;
+    }
+} */
+
+/* Mobile first */
+h1{
+     background-color: red;
+}
+/* Tablet doc */
+@media screen and (min-width:480px){
+    h1{
+        background-color: blue;
+    }
 }
