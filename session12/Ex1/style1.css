@@ -1,0 +1,8 @@
+.form-select{
+    background-color: orangered;
+    height: 35px;
+    width: 125px;
+}
+.form-select option{
+    color: white;
+}

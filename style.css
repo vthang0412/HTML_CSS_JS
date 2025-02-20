@@ -43,13 +43,3 @@ h1{
     }
 } */
 
-/* Mobile first */
-h1{
-     background-color: red;
-}
-/* Tablet doc */
-@media screen and (min-width:480px){
-    h1{
-        background-color: blue;
-    }
-}
