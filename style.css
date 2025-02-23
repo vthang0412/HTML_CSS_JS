@@ -1,8 +1,4 @@
-/**{
-     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/*
 h1{
     background-color: red;
 }
@@ -43,3 +39,72 @@ h1{
     }
 } */
 
+:root{
+    --heading-color: #FFFFFF;
+    --text-color: #C7C7C7;
+    --btn-color: #D3E97A;
+    --bg-color: #0A0A0A;
+    --border-color: #484848;
+    --primary-font: "Bebas Neue";
+    --secondary-font: "Manrope";
+    --corner-radius: 12px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-family: var(--secondary-font);
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    background-color: var(--bg-color);
+    padding: 24px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo{
+    font-family: var(--primary-font);
+    font-size: 32px;
+}
+nav .mobile-menu{
+    display: none;
+}
+nav .desktop-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 32px; 
+}
+nav .desktop-menu li{
+    list-style-type: none;
+}
+nav .desktop-menu a{
+    font-size: 16px;
+}
+nav .logo-first{
+    text-transform: uppercase;
+    color: var(--heading-color);
+    font-family: var(--primary-font);
+    font-size: 101px;
+    padding: 160px 80px 152px 108px;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav .desktop-menu {
+        display: none;
+    }
+    nav .mobile-menu {
+        display: block;
+        background-color: transparent;
+        border: none;
+    }
+    nav{
+        padding: 24px 16px;
+    }
+}
