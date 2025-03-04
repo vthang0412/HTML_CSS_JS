@@ -19,14 +19,4 @@
 
 // 1 > 1 && 2 == 2;
 
-//Input
-
-
-
-
-
-
-
-//Process
-
-//Output
+//for...loop - Vòng lặp for
