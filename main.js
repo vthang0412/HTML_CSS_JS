@@ -114,3 +114,44 @@
 //             alert("Số nhập không hợp lệ. Nhập lại");
 //     }
 // } 
+
+// // // Khai báo hàm
+// // // Function Declaration
+// // function maybannuocTuDong(money){
+// //     if(money === 10000){
+// //         return "Pepsi vị chanh";
+// //     }else if(money === 15000){
+// //         return "Pepsi vị coca";
+
+// //     }else if(money === 20000){
+// //         return "Coca vị pepsi";
+// //     }else{
+// //         return "Tiền không hợp lệ";
+// //     }
+// // }
+// // let lonNuoc1 = maybannuocTuDong(10000);
+// // let lonNuoc2 = maybannuocTuDong(15000);
+// // let lonNuoc3 = maybannuocTuDong(20000);
+// // console.log(lonNuoc1);
+// // console.log(lonNuoc2);
+// // console.log(lonNuoc3);
+
+// // Hàm không tên
+// let sum = (function (a,b){
+//     return a + b;
+// })(1,2);
+// console.log(sum);
+
+// let caculateResult = function (a ,b){
+//     return a * b;
+// };
+
+// console.log(sum);
+// console.log(caculateResult(1,2));
+
+let str = sayHello("Người AE");
+console.log(str);
+
+function sayHello(name){
+    return "Hello " + name;
+}
