@@ -34,7 +34,7 @@
 // let key;
 // while(key !== 6) {
 //     let key = +prompt(menu);
-    
+
 //     switch (key) {
 //         case 1:
 //             let n = +prompt("Nhập số lượng phần tử của mảng:");
@@ -54,7 +54,7 @@
 //                 console.log("Nhập mảng thành công");
 //             }
 //             break;
-            
+
 //         case 2:
 //             if (numbers.length === 0) {
 //                 console.log("Mảng rỗng!");
@@ -62,7 +62,7 @@
 //                 console.log(numbers);
 //             }
 //             break;
-            
+
 //         case 3:
 //             let phanTu = +prompt("Nhập phần tử cần thêm:");
 //             if (isNaN(phanTu)) {
@@ -72,7 +72,7 @@
 //                 console.log("Thêm phần tử thành công");
 //             }
 //             break;
-            
+
 //         case 4:
 //             if (numbers.length === 0) {
 //                 console.log("Mảng rỗng, không thể sửa!");
@@ -91,7 +91,7 @@
 //                 }
 //             }
 //             break;
-            
+
 //         case 5:
 //             if (numbers.length === 0) {
 //                 console.log("Mảng rỗng, không thể xóa!");
@@ -105,11 +105,11 @@
 //                 }
 //             }
 //             break;
-            
+
 //         case 6:
 //             console.log("Cảm ơn bạn đã sử dụng chương trình!");
 //             break;
-            
+
 //         default:
 //             alert("Số nhập không hợp lệ. Nhập lại");
 //     }
@@ -149,9 +149,58 @@
 // console.log(sum);
 // console.log(caculateResult(1,2));
 
-let str = sayHello("Người AE");
-console.log(str);
+// let str = sayHello("Người AE");
+// console.log(str);
 
-function sayHello(name){
-    return "Hello " + name;
-}
+// function sayHello(name){
+//     return "Hello " + name;
+// }
+
+// H0F
+// function myFunction(random) {
+//     return random;
+// }
+// myFunction(function () {});
+
+//
+let numbers = [10, 20, 30, 40, 50];
+// forEach => tạo ra mảng mới từ mảng cũ
+numbers.forEach(function (elment, index) {
+    console.log(index, elment);
+});
+
+// map - Ánh xạ
+let result = numbers.map(function (elment, index) {
+    return elment * 2;
+});
+console.log(result);
+
+// filter - Lọc
+let result2 = numbers.filter(function (elment, index) {
+    return elment > 20;
+});
+console.log(result2);
+
+// reduce - Giảm
+// acc - accumulator - biến tích lũy
+// cur - currentValue - giá trị hiện tại
+let reduceResult = numbers.reduce(function (accumulator, currentValue) {
+    // return accumulator + currentValue;
+    console.log("accumulator", accumulator);
+    console.log("currentValue", currentValue);
+    return accumulator + currentValue;
+}, 0);
+console.log("Reduce Result", reduceResult);
+
+//some
+let arr = [1, 2, 3, 4, 5];
+let isTrue = arr.some(function (elment, index) {
+    return elment % 2 === 0;
+});
+console.log(isTrue);
+
+//every
+let isTrue2 = arr.every(function (elment, index) {
+    return elment % 2 === 0;
+});
+console.log(isTrue2);
