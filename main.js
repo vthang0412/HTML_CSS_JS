@@ -162,45 +162,173 @@
 // }
 // myFunction(function () {});
 
-//
-let numbers = [10, 20, 30, 40, 50];
-// forEach => tạo ra mảng mới từ mảng cũ
-numbers.forEach(function (elment, index) {
-    console.log(index, elment);
-});
+// //
+// let numbers = [10, 20, 30, 40, 50];
+// // forEach => tạo ra mảng mới từ mảng cũ
+// numbers.forEach(function (elment, index) {
+//     console.log(index, elment);
+// });
 
-// map - Ánh xạ
-let result = numbers.map(function (elment, index) {
-    return elment * 2;
-});
-console.log(result);
+// // map - Ánh xạ
+// let result = numbers.map(function (elment, index) {
+//     return elment * 2;
+// });
+// console.log(result);
 
-// filter - Lọc
-let result2 = numbers.filter(function (elment, index) {
-    return elment > 20;
-});
-console.log(result2);
+// // filter - Lọc
+// let result2 = numbers.filter(function (elment, index) {
+//     return elment > 20;
+// });
+// console.log(result2);
 
-// reduce - Giảm
-// acc - accumulator - biến tích lũy
-// cur - currentValue - giá trị hiện tại
-let reduceResult = numbers.reduce(function (accumulator, currentValue) {
-    // return accumulator + currentValue;
-    console.log("accumulator", accumulator);
-    console.log("currentValue", currentValue);
-    return accumulator + currentValue;
-}, 0);
-console.log("Reduce Result", reduceResult);
+// // reduce - Giảm
+// // acc - accumulator - biến tích lũy
+// // cur - currentValue - giá trị hiện tại
+// let reduceResult = numbers.reduce(function (accumulator, currentValue) {
+//     // return accumulator + currentValue;
+//     console.log("accumulator", accumulator);
+//     console.log("currentValue", currentValue);
+//     return accumulator + currentValue;
+// }, 0);
+// console.log("Reduce Result", reduceResult);
 
-//some
-let arr = [1, 2, 3, 4, 5];
-let isTrue = arr.some(function (elment, index) {
-    return elment % 2 === 0;
-});
-console.log(isTrue);
+// //some
+// let arr = [1, 2, 3, 4, 5];
+// let isTrue = arr.some(function (elment, index) {
+//     return elment % 2 === 0;
+// });
+// console.log(isTrue);
 
-//every
-let isTrue2 = arr.every(function (elment, index) {
-    return elment % 2 === 0;
-});
-console.log(isTrue2);
+// //every
+// let isTrue2 = arr.every(function (elment, index) {
+//     return elment % 2 === 0;
+// });
+// console.log(isTrue2);
+
+// // 1. Tạo object person gồm các thông tin: name, age, job
+// const person = {
+//     personName: "Đặng Văn Thắng",
+//     age: 18,
+//     job: "Developer",
+//     isMarried: false,
+// };
+
+// // Truy cập vào object
+// console.log("Person name: ",person.personName);
+// console.log("Age: ",person.age);
+
+// const key = "personName";
+// console.log("Person name: ",person[key]);
+
+// console.log("Job: ",person.job);
+
+// // 2.Thêm thuộc tính cho object
+// person.height = 180; //thêm thuộc tính
+// console.log("Height: ",person.height);
+
+// // 3. Sửa thuộc tính cho object
+// person.personName = "Đặng Văn Thg";
+// person.age = 19;
+// console.log("Person name: ",person);
+
+// // 4. Xóa thuộc tính cho object
+// delete person.isMarried;
+// console.log("Person: ",person);
+
+// // Tạo mảng đối tượng
+// const teachers = [
+//     {
+//         id: 1,
+//         teacherName: "Dang van A",
+//     },
+//     {
+//         id: 2,
+//         teacherName: "Dang van B",
+//     },
+//     {
+//         id: 3,
+//         teacherName: "Dang van C",
+//     }
+// ];
+// console.table(teachers);
+
+// // Duyệt qua đối tượng trong mảng
+// for (const key in person){
+//     console.log(key, person[key]);
+// }
+
+// //Lấy ra các key của object
+// console.log("Danh sách key của object person:",Object.keys(person));
+// console.log("Danh sách value của object person:",Object.values(person));
+
+// // Optional chaining
+// const user = {
+//     name: "Dang Van Thang",
+// };
+// console.log("City: ",user?.address?.city);
+
+// B1:Tạo menu
+// B1.1:
+let choice;
+const products = [];
+do {
+    choice = +prompt(`
+         MENU
+    1.Thêm sản phẩm
+    2.Sửa thông tin sản phẩm
+    3.Xóa sản phẩm theo id
+    4.In danh sách sản phẩm
+    5.Tìm kiếm sản phẩm theo tên
+    6.Thoát chương trình
+    Lựa chọn của bạn:
+    `);
+    switch (choice) {
+        case 1:
+            const productNameInput = prompt("Nhập tên sản phẩm:");
+            const productPriceInput = +prompt("Nhập giá sản phẩm:");
+
+            const newProduct = {
+                id: Math.ceil(Math.random() * 1000000000),
+                productName: productNameInput,
+                productPrice: productPriceInput,
+            };
+            products.push(newProduct);
+            console.log("Thêm sản phẩm thành công!");
+            break;
+        case 2:
+
+            break;
+        case 3:
+            const idDelete = +prompt("Nhập id sản phẩm cần xóa:");
+            const index = products.findIndex(function (product) {
+                return product.id === idDelete;
+            });
+
+            //Trong js có những giá trị nào luôn là falsy: 0, "", null, undefined, NaN, false
+
+            if (index !== -1) {
+                const productsNameDelete =  products[index].productName;
+                const confirmDelete = prompt("Bạn có chắc chắn muốn xóa sản phẩm tên"+" " +productsNameDelete +" "+ "này không?");
+                if (confirmDelete) {
+                    products.splice(index, 1);
+                    console.log("Xóa sản phẩm thành công!");
+                } else {
+                    console.log("Xóa sản phẩm thất bại!");
+                }
+                break;
+            }
+        case 4:
+            console.table(products);
+            break;
+        case 5:
+
+            break;
+        case 6:
+            console.log("Cảm ơn bạn đã sử dụng chương trình!");
+            break;
+
+        default:
+            console.log("Lựa chọn không hợp lệ");
+            break;
+    }
+} while (choice !== 6);
