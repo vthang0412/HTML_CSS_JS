@@ -269,66 +269,69 @@
 
 // B1:Tạo menu
 // B1.1:
-let choice;
-const products = [];
-do {
-    choice = +prompt(`
-         MENU
-    1.Thêm sản phẩm
-    2.Sửa thông tin sản phẩm
-    3.Xóa sản phẩm theo id
-    4.In danh sách sản phẩm
-    5.Tìm kiếm sản phẩm theo tên
-    6.Thoát chương trình
-    Lựa chọn của bạn:
-    `);
-    switch (choice) {
-        case 1:
-            const productNameInput = prompt("Nhập tên sản phẩm:");
-            const productPriceInput = +prompt("Nhập giá sản phẩm:");
+// let choice;
+// const products = [];
+// do {
+//     choice = +prompt(`
+//          MENU
+//     1.Thêm sản phẩm
+//     2.Sửa thông tin sản phẩm
+//     3.Xóa sản phẩm theo id
+//     4.In danh sách sản phẩm
+//     5.Tìm kiếm sản phẩm theo tên
+//     6.Thoát chương trình
+//     Lựa chọn của bạn:
+//     `);
+//     switch (choice) {
+//         case 1:
+//             const productNameInput = prompt("Nhập tên sản phẩm:");
+//             const productPriceInput = +prompt("Nhập giá sản phẩm:");
 
-            const newProduct = {
-                id: Math.ceil(Math.random() * 1000000000),
-                productName: productNameInput,
-                productPrice: productPriceInput,
-            };
-            products.push(newProduct);
-            console.log("Thêm sản phẩm thành công!");
-            break;
-        case 2:
+//             const newProduct = {
+//                 id: Math.ceil(Math.random() * 1000000000),
+//                 productName: productNameInput,
+//                 productPrice: productPriceInput,
+//             };
+//             products.push(newProduct);
+//             console.log("Thêm sản phẩm thành công!");
+//             break;
+//         case 2:
 
-            break;
-        case 3:
-            const idDelete = +prompt("Nhập id sản phẩm cần xóa:");
-            const index = products.findIndex(function (product) {
-                return product.id === idDelete;
-            });
+//             break;
+//         case 3:
+//             const idDelete = +prompt("Nhập id sản phẩm cần xóa:");
+//             const index = products.findIndex(function (product) {
+//                 return product.id === idDelete;
+//             });
 
-            //Trong js có những giá trị nào luôn là falsy: 0, "", null, undefined, NaN, false
+//             //Trong js có những giá trị nào luôn là falsy: 0, "", null, undefined, NaN, false
 
-            if (index !== -1) {
-                const productsNameDelete =  products[index].productName;
-                const confirmDelete = prompt("Bạn có chắc chắn muốn xóa sản phẩm tên"+" " +productsNameDelete +" "+ "này không?");
-                if (confirmDelete) {
-                    products.splice(index, 1);
-                    console.log("Xóa sản phẩm thành công!");
-                } else {
-                    console.log("Xóa sản phẩm thất bại!");
-                }
-                break;
-            }
-        case 4:
-            console.table(products);
-            break;
-        case 5:
+//             if (index !== -1) {
+//                 const productsNameDelete =  products[index].productName;
+//                 const confirmDelete = prompt("Bạn có chắc chắn muốn xóa sản phẩm tên"+" " +productsNameDelete +" "+ "này không?");
+//                 if (confirmDelete) {
+//                     products.splice(index, 1);
+//                     console.log("Xóa sản phẩm thành công!");
+//                 } else {
+//                     console.log("Xóa sản phẩm thất bại!");
+//                 }
+//                 break;
+//             }
+//         case 4:
+//             console.table(products);
+//             break;
+//         case 5:
 
-            break;
-        case 6:
-            console.log("Cảm ơn bạn đã sử dụng chương trình!");
-            break;
+//             break;
+//         case 6:
+//             console.log("Cảm ơn bạn đã sử dụng chương trình!");
+//             break;
 
-        default:
-            console.log("Lựa chọn không hợp lệ");
-            break;
-    }
-} while (choice !== 6);
+//         default:
+//             console.log("Lựa chọn không hợp lệ");
+//             break;
+//     }
+// } while (choice !== 6);
+
+
+// Luyện tập quản lý sách trong thư viện
