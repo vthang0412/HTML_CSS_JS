@@ -334,4 +334,137 @@
 // } while (choice !== 6);
 
 
-// Luyện tập quản lý sách trong thư viện
+//DOM - Document Object Model
+//document.getElementbyId
+
+// let div1 = document.getElementById("demo-id");
+
+// console.log(div1);
+
+// //
+
+// let element = document.getElementsByClassName("demo-class");
+
+// // console.log(element);
+// let div2 = element[0];
+// let b = element[2];
+// console.log(div2);
+// console.log(b);
+
+// for (let i = 0; i <= element.length - 1; i++) {
+//     console.log(element[i]);
+// }
+
+// let divs = document.getElementsByTagName("div");
+// console.log(divs);
+
+// let div = document.querySelector("div#demo-id.demo-class");
+// console.log(div);
+
+// let elements = document.querySelectorAll("div.demo-class");
+// console.log(elements);
+
+// let p = document.getElementById("paragraph");
+
+// // console.dir(document);
+// // console.dir(p);
+
+// console.log(p.innerHTML);
+// console.log(p.innerText);
+
+// console.log(p.textContent);
+
+// p.textContent = "Hello world";
+// p.innerText = "Hehe world";
+// p.innerHTML = "<b><i>Hello world</i></b>"
+
+// let img = document.getElementsByTagName("img")[0];
+
+// console.log(img);
+
+// let link = img.getAttribute("src");
+
+// console.log(link);
+
+// let a = document.getElementById("anchor");
+// let url = a.getAttribute("href");
+// console.log(url);
+
+// a.setAttribute("href","http://rikkei.edu.vn");
+
+// let div = document.getElementById("demo-style-property");
+
+// // console.log(div.style);
+
+// // console.log(div.style.backgroundColor);
+
+// // div.style.backgroundColor = "red";
+
+// console.log(div.classList);
+
+// div.classList.add("c4");
+
+// div.classList.remove("c2");// xóa c2
+
+// let check = div.classList.contains("c4");//false
+
+// console.log(check);
+
+// div.classList.toggle("demo-toggle");
+
+// div.classList.add("demo-class-list");
+
+
+//Demo trên lớp
+// console.log(document);
+// let h1 = document.getElementById("demo-id");
+// console.log(h1);
+
+// let tagList = document.getElementsByClassName("demo-class");
+// console.log(tagList);
+
+// console.log(tagList[2]);
+
+// for (let i = 0; i <= tagList.length; i++) {
+//     console.log(tagList[i]);
+// }
+
+let iTag = document.getElementsByClassName("demo-class")[2];
+console.log(iTag);
+console.log(iTag.innerHTML);
+console.log(iTag.innerText);
+console.log(iTag.textContent);
+
+let p = document.getElementById("demo-inner");
+console.log(p.innerHTML);
+console.log(p.innerText);
+console.log(p.textContent);
+
+p.textContent = "Hello world";
+p.innerText = "qweqeqewq";
+p.innerHTML = `
+<span>1</span>
+<u>123</u>
+<i>321</i>
+`;
+//lấy phần tử id của let p = ...
+console.log(p.id);
+
+//style
+console.log(p.style);
+
+let abbr = document.getElementsByClassName("class-01")[0];
+console.log(abbr);
+
+console.log(abbr.classList);
+
+console.log(abbr.classList.add("circle"));
+console.log(abbr.classList.remove("circle"));
+
+console.log(abbr.parentElement.parentElement.children[1]);  
+console.log(abbr.children);
+
+
+
+
+
