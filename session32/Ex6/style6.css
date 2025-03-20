@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    padding: 20px;
+    border: 2px solid black;
+    background-color: beige;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+#increaseButton{
+    background-color: red;
+}
+#decreaseButton{
+    background-color: green;
+}
