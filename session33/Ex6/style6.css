@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #eef5ff;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+input,
+button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.weather-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.infor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.col p {
+    width: 100%;
+}

@@ -9,7 +9,7 @@ addButton.addEventListener("click", function () {
         alert("Tên nhiệm vụ không được để trống!");
         return;
     }
-
+    
     const newTask = document.createElement("li");
     newTask.textContent = taskName;
 
