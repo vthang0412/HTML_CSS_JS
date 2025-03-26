@@ -236,3 +236,9 @@ td {
 .modal-footer .btn-save:hover {
     background-color: #0056b3;
 }
+
+.output-message {
+    margin-top: 10px;
+    font-size: 1em;
+    color: red;
+}

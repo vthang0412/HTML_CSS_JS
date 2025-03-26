@@ -46,13 +46,15 @@ function saveCategory() {
     const name = document.getElementById("categoryName").value.trim();
     const status = document.querySelector('input[name="categoryStatus"]:checked').value;
 
+    const output = document.getElementById("output");
+
     if (!id || !name) {
-        alert("Mã và tên danh mục không được để trống");
+        output.innerHTML = "Mã và tên danh mục không được để trống!";
         return;
     }
 
     if (editIndex === null && categories.some((cat) => cat.id === id)) {
-        alert("Mã danh mục đã tồn tại. Vui lòng nhập mã khác.");
+        output.innerHTML = "Mã danh mục đã tồn tại. Vui lòng nhập mã khác.";
         return;
     }
 
@@ -65,6 +67,8 @@ function saveCategory() {
     localStorage.setItem("categories", JSON.stringify(categories));
     renderTable();
     closeModal();
+
+    output.innerHTML = "Mã và tên danh mục hợp lệ";
 }
 
 function editCategory(index) {
