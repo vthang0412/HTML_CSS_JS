@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7c59b0;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/anchors.png');
+}
+
+#container {
+    text-align: center;
+    width: 80%;
+}
+
+#addBook {
+    background-color: #462972;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addBook:hover {
+    background-color: #5a4bcf;
+}
+
+#content {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#content div {
+    background-color: #3d3d91;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 300px;
+    position: relative;
+}
+
+#content div img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#content div a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    flex: 1;
+}
+
+#content div button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#content div button:hover {
+    background-color: #c82333;
+}
+
+#main {
+    background-color: #6c5ce7;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 20px auto;
+    display: none;
+    position: relative;
+}
+
+#main nav {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#main svg {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#main div {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#main label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#main input {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#Save {
+    background-color: #5a4bcf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#Save:hover {
+    background-color: #4a3dbf;
+}
+
+.hidden {
+    display: none;
+}

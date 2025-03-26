@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style6.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Danh mục</h1>
+      <button id="addCategoryButton" onclick="openModal()">Thêm mới danh mục</button>
+    </div>
+    <div class="toolbar">
+      <select id="searchStatus" onchange="filterCategories()">
+        <option value="">Tất cả</option>
+        <option value="Đang hoạt động">Đang hoạt động</option>
+        <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+      </select>
+      <input type="text" id="searchName" placeholder="Tìm kiếm danh mục theo tên" oninput="filterCategories()">
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Mã danh mục</th>
+          <th>Tên danh mục</th>
+          <th>Trạng thái</th>
+          <th>Chức năng</th>
+        </tr>
+      </thead>
+      <tbody id="categoryTable"></tbody>
+    </table>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">×</span>
+      <h3 class="modal-header">Thêm mới danh mục</h3>
+      <label for="categoryId">Mã danh mục:</label>
+      <input type="text" id="categoryId" required>
+      <label for="categoryName">Tên danh mục:</label>
+      <input type="text" id="categoryName" required>
+      <label for="categoryStatus">Trạng thái:</label>
+      <div>
+        <div>
+          <input type="radio" id="statusActive" name="categoryStatus" value="Đang hoạt động" checked />
+          <label for="statusActive">Đang hoạt động</label>
+        </div>
+        <div>
+          <input type="radio" id="statusInactive" name="categoryStatus" value="Ngừng hoạt động" />
+          <label for="statusInactive">Ngừng hoạt động</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeModal()">Hủy</button>
+        <button class="btn-save" onclick="saveCategory()">Thêm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main6.js"></script>
+</body>
+
+</html>
