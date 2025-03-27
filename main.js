@@ -464,7 +464,13 @@ console.log(abbr.classList.remove("circle"));
 console.log(abbr.parentElement.parentElement.children[1]);  
 console.log(abbr.children);
 
-
-
-
+/**
+ * 
+ * @param {*} a 
+ * @param {*} b 
+ * @returns 
+ */
+function sum(a, b) {
+    return a + b;
+}
 

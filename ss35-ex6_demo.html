@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý danh mục</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .controls input,
+        .controls select {
+            padding: 6px 10px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .btn-cancel {
+            background: #f1f1f1;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .status.active {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status.inactive {
+            color: red;
+            font-weight: bold;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 400px;
+        }
+
+        .modal-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 6px;
+            font-size: 14px;
+        }
+
+        .form-group .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+
+        .error-input {
+            border: 1px solid red;
+        }
+
+        .actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 16px;
+        }
+
+        .actions button.delete {
+            color: red;
+        }
+
+        .actions button.edit {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Danh mục</h1>
+
+    <div class="controls">
+        <div>
+            <select id="filter-status">
+                <option value="">Tất cả</option>
+                <option value="Đang hoạt động">Đang hoạt động</option>
+                <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+            </select>
+            <input type="text" id="search-name" placeholder="Tìm kiếm danh mục theo tên">
+        </div>
+        <button class="btn btn-primary" onclick="openModal()">Thêm mới danh mục</button>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã danh mục</th>
+                <th>Tên danh mục</th>
+                <th>Trạng thái</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody id="category-table">
+
+        </tbody>
+    </table>
+
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modal-title">Thêm mới danh mục</span>
+                <span style="cursor:pointer;" onclick="closeModal()">×</span>
+            </div>
+            <div class="form-group">
+                <label>Mã danh mục</label>
+                <input type="text" id="code">
+                <div id="code-error" class="error-message">Mã danh mục không được để trống</div>
+            </div>
+            <div class="form-group">
+                <label>Tên danh mục</label>
+                <input type="text" id="name">
+                <div id="name-error" class="error-message">Tên danh mục không được để trống</div>
+            </div>
+            <div class="form-group">
+                <label>Trạng thái</label><br>
+                <input type="radio" name="status" value="Đang hoạt động" checked> Đang hoạt động
+                <input type="radio" name="status" value="Ngừng hoạt động"> Ngừng hoạt động
+            </div>
+            <button class="btn btn-cancel" onclick="closeModal()">Hủy</button>
+            <button class="btn btn-primary" onclick="saveCategory()">Lưu</button>
+        </div>
+    </div>
+
+    <script>
+        function getData() {
+            return JSON.parse(localStorage.getItem('category')) ||
+                [
+                    { code: 'DM001', name: 'Danh mục 1', status: 'Đang hoạt động' },
+                    { code: 'DM002', name: 'Danh mục 2', status: 'Ngừng hoạt động' },
+                    { code: 'DM003', name: 'Danh mục 3', status: 'Đang hoạt động' },
+                    { code: 'DM004', name: 'Danh mục 4', status: 'Ngừng hoạt động' },
+                    { code: 'DM005', name: 'Danh mục 5', status: 'Đang hoạt động' }
+                ];
+        }
+        function saveData() {
+            localStorage.setItem('category', JSON.stringify(data))
+        }
+
+        function renderData() {
+            let data = getData();
+            let table = document.getElementById('category-table');
+            table.innerHTML = "";
+            data.forEach((item, index) => {
+                table.innerHTML += `
+                <tr>
+                    <td>${item.code}</td>
+                    <td>${item.name}</td>
+                    <td>
+                    <span class="status ${item.status === 'Đang hoạt động' ? 'active' : 'inactive'}">
+                        ${item.status}
+                    </span>
+                </td>
+                <td class="actions">
+                    <button class="delete" onclick="deleteCategory(${index})">Xóa</button>
+                    <button class="edit" onclick="editCategory(${index})">Sửa</button>
+                </td>
+            </tr>
+                </tr>
+                `;
+            });
+        }
+
+        function openModal() {
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+        function saveCategory() {
+            let code = document.getElementById("code").value.trim();
+            let name = document.getElementById("name").value.trim();
+            let status = document.querySelector('input[name="status"]:checked').value;
+
+            if (!code) {
+                document.getElementById("code-error").style.display = "block";
+                return;
+            } else {
+                document.getElementById("code-error").style.display = "none";
+            }
+
+            if (!name) {
+                document.getElementById("name-error").style.display = "block";
+                return;
+            } else {
+                document.getElementById("name-error").style.display = "none";
+            }
+
+            let data = getData();
+
+            if (data.find(item => item.code === code)) {
+                codeError.textContent = "Mã danh mục đã tồn tại";
+                codeError.style.display = "block";
+                return;
+            }
+
+            data.push({ code, name, status });
+
+            localStorage.setItem("category", JSON.stringify(data));
+
+            saveData(data);
+            closeModal();
+            renderData();
+        }
+        function deleteCategory(index) {
+            if (confirm('Bạn có muốn xóa danh mục này ko?')) {
+                let data = getData();
+                data.splice(index, 1);
+    
+                saveData(data);
+                renderData();
+            }
+        }
+
+        renderData()
+    </script>
+
+</body>
+
+</html>
